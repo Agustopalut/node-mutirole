@@ -1,0 +1,31 @@
+post http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"agusto@gmail.com",
+    "password":"agus123"
+}
+
+###
+get http://localhost:5000/users
+
+###
+get http://localhost:5000/me
+
+###
+delete http://localhost:5000/logout
+
+###
+post http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name":"product 4",
+    "price":20000
+}
+
+###
+get http://localhost:5000/products
+
+###
+get http://localhost:5000/products/f1b58bec-cd45-413d-9aff-9939e48d66bc

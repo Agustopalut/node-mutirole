@@ -1,0 +1,29 @@
+rencana:
+    project ini menjalankan sebuah program yang dimana hanya admin bisa mendapatkan data user,dan manipulasi data.selain admin akses di tolak.
+    dan untuk api product,admin bisa melihat semua data product,sedangkan user hany bisa melihat data yang di post dia sendiri
+
+kisi:
+    pisahkan route api untuk login dll,api users,dan product
+
+controller:
+
+
+catatan:
+    middleware 1):
+    buatlah middleware untuk memvalidasi seseorang yang login sebelum masuk ke api tujuan
+    middleware ini bertujuan untuk memvalidasi,apakah dia sudah login?
+    jika tidak lakukan sesuatu
+    jika suda,maka buatkan dia sebuah variable request,karena request user akan di validasi lagi di middleware selanjutnya.pengecekan login berdasarkan session.isikan varible tersebut dengan nilai id dari ser yang login,dan uuid dari user itu sendiri.kali ini kita membuat project berdasarkan session bukan cookie(hampir mirip)
+    req.sessios.namasessio?true:false
+    (lakukan pengecekan terlebih dahulu,baru tangkap user yang dimana uuid nya sama dengan session nya,karena itu bertanda dia sudah login)
+
+    middleware 2).
+    middleware ini validasi api users,jika yang login sebagai users,akses di tolak,jika sebagai admin,akses diterima dan bisa mendapatkan api users.
+    tangkap user yang dimana uui nya sama dengan session nya.kenapa tidak validasi apakah session ada atau tidak? karena middleware,user sudah dipastikan 100% login.middleware 1 untuk validasi apakah session nya ada atau tidak(sudah login / belum)
+    jika yang login role bukan admin,jangan beri akses,namun jika sebagai admin beri akses
+
+    note:
+    untuk api product cukup menggunakan middleware 1,karena user dapat mengaksess api product nya
+
+
+api users:
